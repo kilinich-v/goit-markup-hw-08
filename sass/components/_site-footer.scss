@@ -1,0 +1,117 @@
+.footer {
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	color: rgba(255, 255, 255, 0.6);
+	background-color: getColor("bg-footer");
+
+	.container {
+		@include flexBox(start, stretch);
+	}
+
+	h2 {
+		@include fontParam(14px, 700, 1.14, 0.03em);
+
+		margin-top: 12px;
+		margin-bottom: 20px;
+		color: getColor("text-secondary");
+		text-transform: uppercase;
+	}
+
+	.link {
+		font-style: normal;
+		color: inherit;
+	}
+
+	.logo {
+		margin-bottom: 20px;
+		color: getColor("text-secondary");
+	}
+}
+
+/*       Contacts       */
+
+.footer-adress {
+	margin-right: 70px;
+}
+
+.contacts {
+	a:not(:last-child) {
+		margin-bottom: 9px;
+	}
+
+	a:first-child {
+		color: getColor("text-secondary");
+	}
+}
+
+/*       Join       */
+
+.footer-join {
+	margin-right: 93px;
+
+	.list {
+		@include flexBox(center, center);
+	}
+
+	.item:not(:last-child) {
+		margin-right: 10px;
+	}
+
+	.social-icon {
+		fill: getColor("text-secondary");
+	}
+
+	.link {
+		@include transition(background-color);
+
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+}
+
+/*       Subscribe       */
+
+.subscribe {
+	&-form {
+		@include flexBox(start, stretch);
+	}
+
+	&-input {
+		width: 358px;
+		height: 50px;
+		margin-right: 12px;
+		padding: 15px 16px;
+
+		color: inherit;
+		border-radius: 4px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		background-color: getColor("bg-footer");
+	}
+
+	&-btn {
+		@include flexBox(center, center);
+		@include fontParam(16px, 700, 1.87, 0.03em);
+		@include button(10px 29px, getColor("accent"));
+
+		border-radius: 4px;
+		color: getColor("text-secondary");
+	}
+
+	&-btn::after {
+		content: "";
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		margin-left: 10px;
+
+		background-image: url(../images/telegram.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+}

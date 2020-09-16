@@ -1,0 +1,61 @@
+.clients {
+	@extend %sectionPadding;
+
+	.list {
+		@include flexBox(center, center);
+	}
+}
+
+.clients .link {
+	@include flexBox(center, center);
+	@include transition(background-color);
+
+	width: 170px;
+	height: 90px;
+	border: 1px solid getColor("decoration");
+	border-radius: 4px;
+
+	&:hover,
+	&:focus {
+		border-color: getColor("accent");
+	}
+}
+
+.item {
+	.clients &:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+
+.icon {
+	@include transition(fill);
+
+	.clients .item:nth-child(1) & {
+		@include svgIcon(44px, 49px, getColor("decoration"));
+	}
+
+	.clients .item:nth-child(2) & {
+		@include svgIcon(40px, 52px, getColor("decoration"));
+	}
+
+	.clients .item:nth-child(3) & {
+		@include svgIcon(41px, 42px, getColor("decoration"));
+	}
+
+	.clients .item:nth-child(4) & {
+		@include svgIcon(79px, 42px, getColor("decoration"));
+	}
+
+	.clients .item:nth-child(5) & {
+		@include svgIcon(59px, 47px, getColor("decoration"));
+	}
+
+	.clients .item:nth-child(6) & {
+		@include svgIcon(88px, 45px, getColor("decoration"));
+	}
+
+	.clients .link:hover &,
+	.clients .link:focus & {
+		fill: getColor("accent");
+	}
+}

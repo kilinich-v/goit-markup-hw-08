@@ -1,0 +1,125 @@
+.examples {
+	@extend %sectionPadding;
+}
+
+/*      Навигация портфолио      */
+
+.nav-portfolio {
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.nav-portfolio .link {
+	padding: 6px 22px;
+
+	color: getColor("text-title");
+	background-color: var(--secondary-bg-color);
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.62;
+}
+
+.nav-portfolio .item:not(:last-child) {
+	margin-right: 8px;
+}
+
+.nav-portfolio .link:hover,
+.nav-portfolio .link:focus {
+	color: getColor("text-secondary");
+	background-color: getColor("accent");
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*          Примеры работ       */
+
+.examples-list {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.examples p {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	color: getColor("text-primary");
+	font-size: 16px;
+	line-height: 1.87;
+}
+
+.examples-list .item {
+	width: calc((100% - 60px) / 3);
+	margin-right: 30px;
+
+	background-color: getColor("bg-primary");
+	border: 1px solid getColor("bg-secondary");
+}
+
+.examples-list .item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.examples-list .item:not(:nth-last-child(-n + 3)) {
+	margin-bottom: 30px;
+}
+
+.examples .item {
+	position: relative;
+}
+
+.examples-title {
+	margin-bottom: 4px;
+	margin-left: 24px;
+	margin-top: 20px;
+
+	color: getColor("text-title");
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 2;
+	letter-spacing: 0.06em;
+}
+
+.examples-description {
+	margin-left: 24px;
+	padding-bottom: 20px;
+}
+
+.examples .examples-textbox {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 294px;
+	overflow: hidden;
+}
+
+.examples .examples-text {
+	@include transition(transform);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 63px 24px;
+
+	font-size: 18px;
+	line-height: 1.56;
+	color: getColor("text-secondary");
+	background: rgba(33, 150, 243, 0.9);
+	transform: translate(0, calc(100% + 1px));
+}
+
+.examples-list .item:hover,
+.examples-list .item:focus {
+	@include transition(box-shadow);
+
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.examples-list .item:hover .examples-text,
+.examples-list .item:focus .examples-text {
+	transform: translate(0, 0);
+}

@@ -1,0 +1,82 @@
+.main-nav {
+	@include flexBox(space-between, center);
+
+	border-bottom: 1px solid #ececec;
+
+	.link {
+		@include fontParam(14px, 500, 1.14, 0.02em);
+		@include transition(color);
+
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		&:hover,
+		&:focus {
+			color: getColor("accent");
+		}
+
+		&:hover .icon,
+		&:focus .icon {
+			fill: getColor("accent");
+		}
+	}
+}
+
+.site-nav {
+	@include flexBox(flex-start, center);
+
+	.list {
+		@include flexBox(flex-start, center);
+	}
+}
+
+.site-nav .item {
+	position: relative;
+
+	&:not(:last-child) {
+		margin-right: 50px;
+	}
+}
+
+.site-nav .link {
+	color: getColor("text-title");
+
+	&.accent::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		margin-bottom: -1px;
+		background-color: getColor("accent");
+		border-radius: 2px;
+	}
+}
+
+.contacts-nav {
+	@include flexBox(flex-start, center);
+
+	.item:not(:last-child) {
+		margin-right: 50px;
+	}
+}
+
+.contacts-nav .link {
+	@include flexBox(flex-start, center);
+	color: getColor("text-primary");
+}
+
+.contacts-nav .icon {
+	& {
+		margin-right: 10px;
+	}
+
+	&-phone {
+		@include svgIcon(10px, 15px, getColor("text-primary"));
+	}
+
+	&-mail {
+		@include svgIcon(16px, 12px, getColor("text-primary"));
+	}
+}

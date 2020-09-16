@@ -1,0 +1,162 @@
+.dropbox {
+	@include transition(opacity);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden .modal {
+	transform: translate(-50%, 100%);
+}
+
+.modal {
+	@extend %centeringBox;
+	@include transition(transform);
+	@include fontParam(12px, 400, 1.16, 0.03em);
+
+	position: fixed;
+	width: 528px;
+	height: 581px;
+	padding: 40px;
+
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	background-color: getColor("bg-primary");
+}
+
+.modal .close-btn {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	width: 30px;
+	height: 30px;
+
+	border-radius: 50%;
+	cursor: pointer;
+	border: 1px solid getColor("decoration");
+	background-color: getColor("bg-primary");
+
+	.icon {
+		@include svgIcon(11px, 11px, #000);
+		@extend %centeringBox;
+
+		position: absolute;
+	}
+
+	&:hover .icon,
+	&:focus .icon {
+		fill: getColor("accent");
+	}
+}
+
+//////// Form /////////
+
+.form {
+	@include fontParam();
+	@include flexBox(start, stretch);
+
+	flex-direction: column;
+
+	p {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&-title {
+		@include fontParam(20px, 700, 1.15, 0.03em);
+
+		margin-top: 0;
+		text-align: center;
+		color: getColor("text-title");
+	}
+
+	&-field {
+		@include fontParam(12px, 400, 1.17, 0.01em);
+		position: relative;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	&-input {
+		width: 100%;
+		height: 40px;
+		margin-top: 4px;
+		padding: 12px 16px;
+		padding-left: 42px;
+
+		border: 1px solid rgba(33, 33, 33, 0.2);
+		border-radius: 4px;
+		outline: none;
+	}
+
+	&-input:focus {
+		border: 1px solid getColor("accent");
+	}
+
+	&-icon {
+		position: absolute;
+		bottom: 11px;
+		left: 12px;
+		width: 18px;
+		height: 18px;
+
+		fill: getColor("text-title");
+	}
+
+	&-input:focus + &-icon {
+		fill: getColor("accent");
+	}
+
+	&-comment {
+		margin-bottom: 20px;
+	}
+
+	&-textarea {
+		padding-left: 16px;
+		resize: none;
+		height: 120px;
+		overflow: auto;
+	}
+
+	&-textarea::placeholder {
+		color: rgba(117, 117, 117, 0.5);
+	}
+
+	&-agreement {
+		@include flexBox(center, center);
+		@include fontParam(14px, 400, 1.5, 0.03em);
+
+		margin-bottom: 30px;
+	}
+
+	&-agreement &-icon {
+		@include svgIcon(16px, 15px, #fff);
+
+		position: static;
+		margin-right: 8px;
+		border-radius: 2px;
+		border: 2px solid getColor("text-title");
+		background-color: getColor("bg-primary");
+		stroke: #ffffff;
+		stroke-width: 0.2;
+	}
+}
+
+.check-input:checked + .form-icon {
+	background-color: getColor("accent");
+	border-color: getColor("accent");
+}
+
+.send-btn {
+	@include button(10px 55px, getColor("accent"));
+	@include fontParam(16px, 700, 1.87, 0.06em);
+
+	margin: auto;
+	color: getColor("text-secondary");
+}

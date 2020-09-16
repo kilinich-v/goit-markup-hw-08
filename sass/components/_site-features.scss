@@ -1,0 +1,40 @@
+.features {
+	@extend %sectionPadding;
+
+	padding-bottom: 94px;
+
+	&-title {
+		@include fontParam(14px, 700, 1.14, 0.03em);
+
+		margin-top: 0px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		color: getColor("text-title");
+	}
+}
+
+.features-list {
+	@include flexBox(center, stretch);
+
+	p {
+		margin: 0;
+	}
+
+	.icon {
+		width: 270px;
+		height: 120px;
+		padding: 25px 100px;
+		margin-bottom: 30px;
+
+		border-radius: 4px;
+		background-color: getColor("bg-secondary");
+	}
+}
+
+.features-list .item {
+	width: 270px;
+
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+}

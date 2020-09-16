@@ -1,0 +1,36 @@
+.hero {
+	@include flexBox(start, center);
+
+	height: 600px;
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #c4c4c4;
+	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img.jpg);
+	text-align: center;
+	color: getColor("text-secondary");
+
+	&-container {
+		max-width: 696px;
+		margin-right: auto;
+		margin: auto;
+	}
+
+	&-title {
+		@include fontParam(44px, 900, 1.36, 0.06em);
+
+		display: inline-block;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+	}
+
+	&-btn {
+		@include fontParam(16px, 700, 1.87, 0.06em);
+		@include button(10px 32px, getColor("accent"));
+
+		margin: auto;
+		font-family: inherit;
+		color: getColor("text-secondary");
+	}
+}
