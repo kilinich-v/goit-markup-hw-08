@@ -1,0 +1,34 @@
+.hero {
+	@include flexBox(center, center);
+
+	height: 400px;
+	max-width: 480px;
+	text-align: center;
+	background-color: #c4c4c4;
+	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img.jpg);
+	background-position: center;
+	background-size: cover;
+
+	&__container {
+		@include flexBox(center, center);
+		flex-direction: column;
+		max-width: 360px;
+	}
+
+	&__title {
+		@include fontParam(26px, 900, 1.62, 0.06em);
+
+		display: inline-block;
+		margin-bottom: 30px;
+		color: getColor("text-secondary");
+		text-transform: uppercase;
+	}
+
+	&__btn {
+		@include button(10px 32px, getColor("accent"));
+		@include fontParam(16px, 700, 1.87, 0.06em);
+
+		color: getColor("text-secondary");
+		font-family: inherit;
+	}
+}

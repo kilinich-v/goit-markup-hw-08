@@ -1,0 +1,27 @@
+.features {
+	padding-top: 60px;
+
+	&__item {
+		width: 450px;
+	}
+
+	&__icon {
+		width: 450px;
+		height: 120px;
+		padding: 25px 100px;
+		margin-bottom: 30px;
+
+		border-radius: 4px;
+		background-color: getColor("bg-secondary");
+	}
+
+	&__title {
+		@include fontParam(14px, 700, 1.14, 0.03em);
+
+		margin-top: 0px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		text-align: center;
+		color: getColor("text-title");
+	}
+}

@@ -1,0 +1,77 @@
+.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
+.link {
+	text-decoration: none;
+	display: block;
+	color: inherit;
+	font-style: normal;
+}
+
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.accent {
+	color: getColor("accent");
+}
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@media screen and (min-width: $mobile) {
+		width: 480px;
+	}
+	@media screen and (min-width: $tablet) {
+		width: 768px;
+	}
+	@media screen and (min-width: $desktop) {
+		width: 1230px;
+	}
+}
+
+.section-title {
+	color: getColor("text-title");
+	text-align: center;
+
+	@media screen and (min-width: $mobile) {
+		@include fontParam(28px, 700, 1.18, 0.03em);
+	}
+
+	@media screen and (min-width: $desktop) {
+		@include fontParam(36px, 700, 1.16, 0.03em);
+	}
+}
+
+.logo {
+	@media screen and (min-width: $mobile) {
+		@include fontParam(24px, 700, 1.19, 0.03em);
+	}
+
+	@media screen and (min-width: $desktop) {
+		@include fontParam(26px, 700, 1.17, 0.03em);
+	}
+
+	color: #000;
+	font-family: Raleway, sans-serif;
+	text-decoration: none;
+}

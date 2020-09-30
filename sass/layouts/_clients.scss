@@ -1,0 +1,74 @@
+.clients {
+	@extend %sectionPadding;
+
+	&__title {
+		@extend %titleMargin;
+	}
+
+	&__list {
+		@include flexBox(space-between, center);
+		flex-wrap: wrap;
+		margin: -15px;
+	}
+
+	&__item {
+		margin: 15px;
+	}
+
+	&__link {
+		@include transition(background);
+		position: relative;
+		width: 210px;
+		height: 90px;
+		border: 1px solid getColor("decoration");
+		border-radius: 4px;
+
+		&:hover,
+		&:focus {
+			border-color: getColor("accent");
+		}
+	}
+
+	&__icon {
+		@extend %centeringBox;
+		@include transition(fill);
+
+		position: absolute;
+		fill: getColor("decoration");
+
+		.clients__link:hover &,
+		.clients__link:focus & {
+			fill: getColor("accent");
+		}
+
+		.clients__item:nth-child(1) & {
+			width: 44px;
+			height: 49px;
+		}
+
+		.clients__item:nth-child(2) & {
+			width: 40px;
+			height: 52px;
+		}
+
+		.clients__item:nth-child(3) & {
+			width: 41px;
+			height: 42px;
+		}
+
+		.clients__item:nth-child(4) & {
+			width: 79px;
+			height: 42px;
+		}
+
+		.clients__item:nth-child(5) & {
+			width: 59px;
+			height: 47px;
+		}
+
+		.clients__item:nth-child(6) & {
+			width: 88px;
+			height: 45px;
+		}
+	}
+}

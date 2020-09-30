@@ -1,0 +1,62 @@
+.site-header {
+	@include flexBox(space-between, center);
+
+	border-bottom: 1px solid #ececec;
+	position: relative;
+
+	&__logo {
+		margin-right: 93px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	&__contacts {
+		@include flexBox(space-between, center);
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 50px;
+		}
+	}
+
+	&__link {
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		@include fontParam(14px, 500, 1.14, 0.03em);
+		@include transition(color);
+		color: getColor("text-primary");
+	}
+
+	&__icon {
+		margin-right: 10px;
+		fill: getColor("text-primary");
+	}
+}
+
+.site-header__link {
+	@include flexBox(center, center);
+
+	&:hover,
+	&:focus {
+		color: getColor("accent");
+		cursor: pointer;
+	}
+
+	& .site-header__icon {
+		fill: getColor("accent");
+	}
+}
+
+.site-header__icon {
+	&--phone {
+		width: 10px;
+		height: 15px;
+	}
+
+	&--mail {
+		width: 16px;
+		height: 12px;
+	}
+}
