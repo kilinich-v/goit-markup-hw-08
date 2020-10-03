@@ -184,19 +184,37 @@
 			<!-- Чем мы занимаемся -->
 			<section class="studio-activity">
 				<div class="container">
-					<h2 class="studio-activity__title section__title">Чем мы занимаемся</h2>
+					<h2 class="studio-activity__title section-title">Чем мы занимаемся</h2>
 					<ul class="studio-activity__list list">
 						<li class="studio-activity__item item">
 							<h3 class="studio-activity__text">Десктопные приложения</h3>
-							<img src="./images/desc.jpg" alt="Десктопные приложения" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/desk.jpg 1x, ./images/desktop/desk@2x.jpg 2x"
+								/>
+								<img src="./images/desktop/desc.jpg" alt="Десктопные приложения" />
+							</picture>
 						</li>
 						<li class="studio-activity__item item">
 							<h3 class="studio-activity__text">Мобильные приложения</h3>
-							<img src="./images/mobile.jpg" alt="Мобильные приложения" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/mobile.jpg 1x, ./images/desktop/mobile@2x.jpg 2x"
+								/>
+								<img src="./images/desktop/mobile.jpg" alt="Мобильные приложения" />
+							</picture>
 						</li>
 						<li class="studio-activity__item item">
 							<h3 class="studio-activity__text">Дизайнерские решения</h3>
-							<img src="./images/design.jpg" alt="Дизайнерские решения" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/design.jpg 1x, ./images/desktop/design@2x.jpg 2x"
+								/>
+								<img src="./images/desktop/design.jpg" alt="Дизайнерские решения" />
+							</picture>
 						</li>
 					</ul>
 				</div>
@@ -208,7 +226,21 @@
 					<h2 class="team__title section-title">Наша команда</h2>
 					<ul class="team__list list">
 						<li class="team__item item">
-							<img class="team__portrait" src="./images/kucherenko.jpg" alt="Николай Кучеренко" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/kucherenko.jpg 1x, ./images/desktop/kucherenko@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 768px)"
+									srcset="./images/tablet/kucherenko-tablet.jpg 1x, ./images/desktop/kucherenko-tablet@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 480px)"
+									srcset="./images/mobile/kucherenko-mobile.jpg 1x, ./images/mobile/kucherenko-mobile@2x.jpg 2x"
+								/>
+								<img class="team__portrait" src="./images/desktop/kucherenko.jpg" alt="Николай Кучеренко" />
+							</picture>
 							<h3 class="team__name list">Николай Кучеренко</h3>
 							<p class="team__position list" lang="en">Product Designer</p>
 							<ul class="team__social social list">
@@ -243,7 +275,21 @@
 							</ul>
 						</li>
 						<li class="team__item item">
-							<img class="team__portrait" src="./images/ivanova.jpg" alt="Ольга Иванова" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/ivanova.jpg 1x, ./images/desktop/ivanova@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 768px)"
+									srcset="./images/tablet/ivanova-tablet.jpg 1x, ./images/tablet/ivanova-tablet@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 480px)"
+									srcset="./images/mobile/ivanova-mobile.jpg 1x, ./images/mobile/ivanova-mobile@2x.jpg 2x"
+								/>
+								<img class="team__portrait" src="./images/desktop/ivanova.jpg" alt="Ольга Иванова" />
+							</picture>
 							<h3 class="team__name list">Ольга Иванова</h3>
 							<p class="team__position list" lang="en">Frontend Developer</p>
 							<ul class="team__social social list">
@@ -278,7 +324,21 @@
 							</ul>
 						</li>
 						<li class="team__item">
-							<img class="team__portrait" src="./images/shevchenko.jpg" alt="Андрей Шевченко" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/shevchenko.jpg 1x, ./images/desktop/shevchenko@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 768px)"
+									srcset="./images/tablet/shevchenko-tablet.jpg 1x, ./images/tablet/shevchenko-tablet@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 480px)"
+									srcset="./images/mobile/shevchenko-mobile.jpg 1x, ./images/mobile/shevchenko-mobile@2x.jpg 2x"
+								/>
+								<img class="team__portrait" src="./images/desktop/shevchenko.jpg" alt="Андрей Шевченко" />
+							</picture>
 							<h3 class="team__name list">Андрей Шевченко</h3>
 							<p class="team__position list" lang="en">Marketing</p>
 							<ul class="team__social social list">
@@ -313,7 +373,21 @@
 							</ul>
 						</li>
 						<li class="team__item">
-							<img class="team__portrait" src="./images/nikolaev.jpg" alt="Иван Николаев" />
+							<picture>
+								<source
+									media="(min-width: 1200px)"
+									srcset="./images/desktop/nikolaev.jpg 1x, ./images/desktop/nikolaev@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 768px)"
+									srcset="./images/tablet/nikolaev-tablet.jpg 1x, ./images/tablet/nikolaev-tablet@2x.jpg 2x"
+								/>
+								<source
+									media="(min-width: 480px)"
+									srcset="./images/mobile/nikolaev-mobile.jpg 1x, ./images/mobile/nikolaev-mobile@2x.jpg 2x"
+								/>
+								<img class="team__portrait" src="./images/desktop/nikolaev.jpg" alt="Иван Николаев" />
+							</picture>
 							<h3 class="team__name list">Иван Николаев</h3>
 							<p class="team__position list" lang="en">UI Designer</p>
 							<ul class="team__social social list">
@@ -405,7 +479,7 @@
 
 		<!-- Подвал -->
 		<footer class="footer">
-			<div class="container">
+			<div class="footer__container container">
 				<div class="footer__contacts">
 					<a class="footer__logo logo link" href="./index.html"> <span class="accent">Web</span>Studio </a>
 					<address class="footer__address">

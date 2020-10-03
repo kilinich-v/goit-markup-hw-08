@@ -2,12 +2,22 @@
 	@include flexBox(center, center);
 
 	height: 400px;
-	max-width: 480px;
+	min-width: 480px;
 	text-align: center;
 	background-color: #c4c4c4;
-	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img.jpg);
+	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+		url(../images/tablet/hero-img-tablet.jpg);
 	background-position: center;
 	background-size: cover;
+
+	@include for-size(tablet) {
+		min-width: 768px;
+	}
+
+	@include for-size(desktop) {
+		max-width: 1600px;
+		height: 600px;
+	}
 
 	&__container {
 		@include flexBox(center, center);

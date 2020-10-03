@@ -1,16 +1,25 @@
 .studio-activity {
 	@extend %sectionPadding;
 
-	@media screen and (max-width: 1229px) {
+	@include for-size(tablet-only) {
 		display: none;
 	}
 
-	&__item {
-		position: relative;
+	&__list {
+		@include flexBox(center, stretch);
+		flex-wrap: wrap;
+		margin: -15px;
+	}
 
-		&:not(:last-child) {
-			margin-right: 30px;
-		}
+	&__item {
+		width: calc((100% - 30px * 3) / 3);
+		position: relative;
+		margin: 15px;
+	}
+
+	&__title {
+		margin-top: 0;
+		margin-bottom: 50px;
 	}
 
 	&__text {

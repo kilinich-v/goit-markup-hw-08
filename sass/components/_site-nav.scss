@@ -1,4 +1,7 @@
 .site-nav {
+	@include fontParam(14px, 500, 1.14, 0.02em);
+	color: getColor("text-title");
+
 	&__list {
 		@include flexBox(space-between, center);
 	}
@@ -9,17 +12,31 @@
 		}
 	}
 
-	@media screen and (min-width: $mobile) {
+	&__link {
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		&:hover,
+		&:focus {
+			color: getColor("accent");
+			cursor: pointer;
+		}
+	}
+
+	@include for-size(mobile) {
 		display: none;
 	}
-	@media screen and (min-width: $tablet) {
-		display: block;
+
+	@include for-size(tablet) {
+		width: 100%;
+		@include flexBox(space-between, center);
 	}
 }
 
 .site-nav__link {
 	&--accent {
 		position: relative;
+		color: getColor("accent");
 	}
 
 	&--accent::after {

@@ -34,6 +34,14 @@
 		@include fontParam(18px, 500, 1.17, 0.02em);
 	}
 
+	&__link {
+		&:hover,
+		&:focus {
+			color: getColor("accent");
+			cursor: pointer;
+		}
+	}
+
 	&__button {
 		margin: 0;
 		padding: 0;
@@ -52,10 +60,10 @@
 		fill: getColor("accent");
 	}
 
-	@media screen and (min-width: $mobile) {
+	@include for-size(mobile) {
 		display: block;
 	}
-	@media screen and (min-width: $tablet) {
+	@include for-size(tablet) {
 		display: none;
 	}
 }

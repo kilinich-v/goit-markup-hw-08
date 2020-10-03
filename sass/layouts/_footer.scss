@@ -4,21 +4,50 @@
 	color: rgba(255, 255, 255, 0.6);
 	background-color: getColor("bg-footer");
 
+	&__container {
+		@include for-size(tablet) {
+			@include flexBox(space-around, start);
+			flex-wrap: wrap;
+		}
+	}
+
+	&__contacts {
+		@include flexBox(center, stretch);
+		flex-direction: column;
+	}
+
 	&__logo {
 		margin-bottom: 20px;
 		color: getColor("text-secondary");
 		text-align: center;
+
+		@include for-size(desktop) {
+			text-align: left;
+		}
 	}
 
 	&__address {
 		text-align: center;
 		margin-bottom: 60px;
+
+		@include for-size(desktop) {
+			margin-right: 70px;
+			margin-bottom: 0;
+			text-align: left;
+		}
 	}
 
 	&__social {
 		@include flexBox(center, center);
 		flex-direction: column;
 		margin-bottom: 60px;
+
+		@include for-size(desktop) {
+			@include flexBox(flex-start, stretch);
+			margin-bottom: 0;
+			margin-right: 93px;
+			margin-top: 10px;
+		}
 	}
 
 	&__title {
@@ -43,11 +72,20 @@
 	&__subscribe {
 		@include flexBox(center, center);
 		flex-direction: column;
+
+		@include for-size(desktop) {
+			@include flexBox(flex-start, stretch);
+		}
 	}
 
 	&__form {
 		@include flexBox(center, center);
 		flex-direction: column;
+
+		@include for-size(desktop) {
+			@include flexBox(flex-start, stretch);
+			flex-direction: row;
+		}
 	}
 
 	&__input {
@@ -60,6 +98,12 @@
 		border-radius: 4px;
 		border: 1px solid rgba(255, 255, 255, 0.3);
 		background-color: getColor("bg-footer");
+
+		@include for-size(desktop) {
+			width: 358px;
+			margin-bottom: 0;
+			margin-right: 12px;
+		}
 	}
 
 	&__btn {

@@ -38,14 +38,14 @@
 	padding-left: 15px;
 	padding-right: 15px;
 
-	@media screen and (min-width: $mobile) {
-		width: 480px;
+	@include for-size(mobile) {
+		width: $mobile;
 	}
-	@media screen and (min-width: $tablet) {
-		width: 768px;
+	@include for-size(tablet) {
+		width: $tablet;
 	}
-	@media screen and (min-width: $desktop) {
-		width: 1230px;
+	@include for-size(desktop) {
+		width: $desktop;
 	}
 }
 
@@ -53,21 +53,21 @@
 	color: getColor("text-title");
 	text-align: center;
 
-	@media screen and (min-width: $mobile) {
+	@include for-size(mobile) {
 		@include fontParam(28px, 700, 1.18, 0.03em);
 	}
 
-	@media screen and (min-width: $desktop) {
+	@include for-size(desktop) {
 		@include fontParam(36px, 700, 1.16, 0.03em);
 	}
 }
 
 .logo {
-	@media screen and (min-width: $mobile) {
+	@include for-size(mobile) {
 		@include fontParam(24px, 700, 1.19, 0.03em);
 	}
 
-	@media screen and (min-width: $desktop) {
+	@include for-size(desktop) {
 		@include fontParam(26px, 700, 1.17, 0.03em);
 	}
 

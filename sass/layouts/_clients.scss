@@ -27,6 +27,14 @@
 		&:focus {
 			border-color: getColor("accent");
 		}
+
+		@include for-size(tablet) {
+			width: 226px;
+		}
+
+		@include for-size(desktop) {
+			width: 170px;
+		}
 	}
 
 	&__icon {

@@ -1,22 +1,22 @@
 %titleMargin {
 	margin-top: 0;
 
-	@media screen and (min-width: $mobile) {
+	@include for-size(mobile) {
 		margin-bottom: 30px;
 	}
 
-	@media screen and (min-width: $desktop) {
+	@include for-size(desktop) {
 		margin-bottom: 50px;
 	}
 }
 
 %sectionPadding {
-	@media screen and (min-width: $mobile) {
+	@include for-size(mobile) {
 		padding-top: 60px;
 		padding-bottom: 60px;
 	}
 
-	@media screen and (min-width: $desktop) {
+	@include for-size(desktop) {
 		padding-top: 94px;
 		padding-bottom: 94px;
 	}

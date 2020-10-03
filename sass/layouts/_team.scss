@@ -10,6 +10,12 @@
 
 	&__list {
 		display: block;
+
+		@include for-size(tablet) {
+			@include flexBox(flex-start, stretch);
+			flex-wrap: wrap;
+			margin: -15px;
+		}
 	}
 
 	&__item {
@@ -22,6 +28,15 @@
 
 		&:not(:last-child) {
 			margin-bottom: 30px;
+		}
+
+		@include for-size(tablet) {
+			width: calc((100% - 30px * 2) / 2);
+			margin: 15px;
+		}
+
+		@include for-size(desktop) {
+			width: calc((100% - 30px * 4) / 4);
 		}
 	}
 

@@ -8,30 +8,65 @@
 		margin-right: 93px;
 		padding-top: 16px;
 		padding-bottom: 16px;
+
+		@include for-size(tablet) {
+			margin-right: 88px;
+		}
 	}
 
 	&__contacts {
-		@include flexBox(space-between, center);
+		@include flexBox(space-between, start);
+
+		@include for-size(tablet-only) {
+			flex-direction: column;
+		}
 	}
 
 	&__item {
 		&:not(:last-child) {
 			margin-right: 50px;
 		}
+
+		@include for-size(tablet-only) {
+			&:not(:last-child) {
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+		}
+		@include for-size(desktop) {
+			&:not(:last-child) {
+				margin-right: 30px;
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&__link {
+		@include fontParam(12px, 500, 1.17, 0.02em);
+
+		@include transition(color);
+
 		padding-top: 32px;
 		padding-bottom: 32px;
-
-		@include fontParam(14px, 500, 1.14, 0.03em);
-		@include transition(color);
 		color: getColor("text-primary");
+
+		@include for-size(tablet-only) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		@include for-size(desktop) {
+			@include fontParam(14px, 500, 1.14, 0.03em);
+		}
 	}
 
 	&__icon {
 		margin-right: 10px;
 		fill: getColor("text-primary");
+
+		@include for-size(tablet-only) {
+			margin-right: 8px;
+		}
 	}
 }
 
@@ -44,7 +79,8 @@
 		cursor: pointer;
 	}
 
-	& .site-header__icon {
+	&:hover .site-header__icon,
+	&:focus .site-header__icon {
 		fill: getColor("accent");
 	}
 }
@@ -52,11 +88,21 @@
 .site-header__icon {
 	&--phone {
 		width: 10px;
-		height: 15px;
+		height: 16px;
+
+		@include for-size(tablet-only) {
+			width: 10px;
+			height: 14px;
+		}
 	}
 
 	&--mail {
 		width: 16px;
 		height: 12px;
+
+		@include for-size(tablet-only) {
+			width: 14px;
+			height: 10px;
+		}
 	}
 }
