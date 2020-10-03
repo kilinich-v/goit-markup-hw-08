@@ -28,7 +28,11 @@
 		}
 
 		@include for-size(tablet) {
-			width: calc((100% - 60px) / 2);
+			width: calc((100% - 30px * 2) / 2);
+		}
+
+		@include for-size(desktop) {
+			width: calc((100% - 30px * 3) / 3);
 		}
 	}
 

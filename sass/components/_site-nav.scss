@@ -1,5 +1,6 @@
 .site-nav {
 	@include fontParam(14px, 500, 1.14, 0.02em);
+	display: none;
 	color: getColor("text-title");
 
 	&__list {
@@ -21,10 +22,6 @@
 			color: getColor("accent");
 			cursor: pointer;
 		}
-	}
-
-	@include for-size(mobile) {
-		display: none;
 	}
 
 	@include for-size(tablet) {

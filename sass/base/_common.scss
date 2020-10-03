@@ -38,9 +38,6 @@
 	padding-left: 15px;
 	padding-right: 15px;
 
-	@include for-size(mobile) {
-		width: $mobile;
-	}
 	@include for-size(tablet) {
 		width: $tablet;
 	}
@@ -50,12 +47,9 @@
 }
 
 .section-title {
+	@include fontParam(28px, 700, 1.18, 0.03em);
 	color: getColor("text-title");
 	text-align: center;
-
-	@include for-size(mobile) {
-		@include fontParam(28px, 700, 1.18, 0.03em);
-	}
 
 	@include for-size(desktop) {
 		@include fontParam(36px, 700, 1.16, 0.03em);
@@ -63,9 +57,7 @@
 }
 
 .logo {
-	@include for-size(mobile) {
-		@include fontParam(24px, 700, 1.19, 0.03em);
-	}
+	@include fontParam(24px, 700, 1.19, 0.03em);
 
 	@include for-size(desktop) {
 		@include fontParam(26px, 700, 1.17, 0.03em);
