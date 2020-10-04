@@ -6,7 +6,7 @@
 	}
 
 	&__list {
-		@include flexBox(space-between, center);
+		@include flexBox(center, center);
 		flex-wrap: wrap;
 		margin: -15px;
 	}
