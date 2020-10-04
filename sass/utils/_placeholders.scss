@@ -1,9 +1,6 @@
 %titleMargin {
 	margin-top: 0;
-
-	@include for-size(mobile) {
-		margin-bottom: 30px;
-	}
+	margin-bottom: 30px;
 
 	@include for-size(desktop) {
 		margin-bottom: 50px;
@@ -11,10 +8,8 @@
 }
 
 %sectionPadding {
-	@include for-size(mobile) {
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
+	padding-top: 60px;
+	padding-bottom: 60px;
 
 	@include for-size(desktop) {
 		padding-top: 94px;

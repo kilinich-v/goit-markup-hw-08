@@ -6,20 +6,17 @@
 	}
 
 	&__list {
-		@include flexBox(flex-start, start);
-		flex-wrap: wrap;
-		margin: -15px;
+		@include for-size(tablet) {
+			@include flexBox(flex-start, start);
+			flex-wrap: wrap;
+			margin: -15px;
+		}
 	}
 
 	&__item {
 		position: relative;
-		width: 450px;
-		margin: 15px;
+		max-width: 450px;
 		background-color: getColor("bg-primary");
-
-		&:not(:last-child) {
-			margin-bottom: 30px;
-		}
 
 		&:hover,
 		&:focus {
@@ -29,6 +26,7 @@
 
 		@include for-size(tablet) {
 			width: calc((100% - 30px * 2) / 2);
+			margin: 15px;
 		}
 
 		@include for-size(desktop) {

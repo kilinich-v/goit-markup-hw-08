@@ -141,11 +141,9 @@ summary {
   display: list-item;
 }
 
-@media (min-width: 480px) {
-  .examples, .footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+.examples, .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 @media (min-width: 1200px) {
@@ -174,6 +172,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+picture,
 img {
   display: block;
   max-width: 100%;
@@ -736,30 +735,27 @@ img {
   margin-bottom: 40px;
 }
 
-.examples__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: -15px;
+@media (min-width: 768px) {
+  .examples__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .examples__item {
   position: relative;
-  width: 450px;
-  margin: 15px;
+  max-width: 450px;
   background-color: #fff;
-}
-
-.examples__item:not(:last-child) {
-  margin-bottom: 30px;
 }
 
 .examples__item:hover, .examples__item:focus {
@@ -774,6 +770,7 @@ img {
 @media (min-width: 768px) {
   .examples__item {
     width: calc((100% - 30px * 2) / 2);
+    margin: 15px;
   }
 }
 
@@ -1009,6 +1006,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -1029,6 +1027,10 @@ img {
   }
 }
 
+.footer__field {
+  width: 100%;
+}
+
 .footer__input {
   width: 450px;
   height: 50px;
@@ -1038,6 +1040,15 @@ img {
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: #2f303a;
+}
+
+@media (max-width: 479px) {
+  .footer__input {
+    width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 
 @media (min-width: 1200px) {
