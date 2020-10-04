@@ -90,6 +90,7 @@
 	}
 
 	&__field {
+		@include flexBox(center, center);
 		width: 100%;
 	}
 
