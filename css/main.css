@@ -171,7 +171,7 @@ summary {
   }
 }
 
-.modal, .clients__icon {
+.clients__icon {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -425,13 +425,14 @@ img {
 .dropbox {
   -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
 }
 
 .modal {
@@ -439,9 +440,11 @@ img {
   transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: fixed;
+  position: absolute;
   width: 450px;
   height: 609px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 40px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -476,9 +479,32 @@ img {
   fill: #2196f3;
 }
 
+@media screen and (max-height: 609px) {
+  .modal {
+    position: relative;
+    top: 15px;
+  }
+}
+
+@media screen and (min-height: 610px) {
+  .modal {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
 .is-hidden .modal {
   -webkit-transform: translate(-50%, 100%);
           transform: translate(-50%, 100%);
+}
+
+@media screen and (max-height: 609px) {
+  .is-hidden .modal {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+  }
 }
 
 .form {
@@ -1105,6 +1131,7 @@ img {
 }
 
 .team {
+  min-width: 480px;
   background-color: #f5f4fa;
   font-size: 16px;
 }
@@ -1122,9 +1149,9 @@ img {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: -15px;

@@ -1,22 +1,24 @@
 .dropbox {
 	@include transition(opacity);
 
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 999;
 	background-color: rgba(0, 0, 0, 0.2);
+	overflow-y: scroll;
 }
 
 .modal {
 	@include transition(transform);
-	@extend %centeringBox;
 
-	position: fixed;
+	position: absolute;
 	width: 450px;
 	height: 609px;
+	margin-right: auto;
+	margin-left: auto;
 	padding: 40px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
@@ -48,8 +50,23 @@
 			fill: getColor("accent");
 		}
 	}
+
+	@media screen and (max-height: 609px) {
+		position: relative;
+		top: 15px;
+	}
+
+	@media screen and (min-height: 610px) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 .is-hidden .modal {
 	transform: translate(-50%, 100%);
+
+	@media screen and (max-height: 609px) {
+		transform: translate(0, 100%);
+	}
 }

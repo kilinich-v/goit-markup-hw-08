@@ -1,6 +1,6 @@
 .team {
 	@extend %sectionPadding;
-
+	min-width: 480px;
 	background-color: getColor("bg-secondary");
 	font-size: 16px;
 
@@ -13,7 +13,7 @@
 		width: 100%;
 
 		@include for-size(tablet) {
-			@include flexBox(flex-start, stretch);
+			@include flexBox(flex-start, flex-start);
 			flex-wrap: wrap;
 			margin: -15px;
 		}
